@@ -14,7 +14,7 @@ def limit(x,start,end):
 	return x
 def getchar(r,g,b):
 	gray = int(0.2126 * r + 0.7152 * g + 0.0722 * b)
-	std = int(demarcation / len(char))
+	std = float(demarcation / len(char))
 	return char[limit(int(gray / std),0,len(char) - 1)]
 if(__name__ == '__main__'):
 	img = Image.open(inPath).convert('RGB')
