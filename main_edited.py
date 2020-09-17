@@ -1,9 +1,4 @@
 from PIL import Image
-inPath = input('path for process:')
-WIDTH = int(input('How long you want for width:'))
-HEIGHT = int(input('How long you want for height:'))
-outPath = input('path for save:')
-print('processing,please wait')
 char = u'WMBRENHFPAGKSZVXQCLUODIJTY0896543721mwqpdgbeanuskxyzfdhtocvrijl#@&$%}{][)(?=;!<>/\|-:*+~·'
 demarcation = 250
 def limit(x,start,end):
@@ -17,6 +12,11 @@ def getchar(r,g,b):
 	std = float(demarcation / len(char))
 	return char[limit(int(gray / std),0,len(char) - 1)]
 if(__name__ == '__main__'):
+	inPath = input('path for process:')
+	WIDTH = int(input('How long you want for width:'))
+	HEIGHT = int(input('How long you want for height:'))
+	outPath = input('path for save:')
+	print('processing,please wait')
 	img = Image.open(inPath).convert('RGB')
 	img = img.resize((WIDTH,HEIGHT),Image.NEAREST)
 	text = ''
